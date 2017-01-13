@@ -33,12 +33,18 @@ def count_bob(s):
     Number of times bob occurs is: 2
     """
     count = 0
-    for i in range(len(s) - 3):
+    for i in range(len(s) - 2):
         if s[i : i+3] == 'bob':
             count += 1
 
     output = 'Number of times bob occurs is: {}'.format(count)
     return output
+
+
+def test_count_bob():
+    assert count_bob('azcbobobegghakl') == 'Number of times bob occurs is: 2'
+    assert count_bob('obobbdbobbbobbzobobbubobbobobooobobu') == 'Number of times bob occurs is: 8'
+    assert count_bob('ebobshbobobbobbobobobeboobobbobdbwboobbobboobbob') == 'Number of times bob occurs is: 11'
 
 
 def count_longest_alphabetical(s):
